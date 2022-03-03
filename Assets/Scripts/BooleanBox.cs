@@ -50,12 +50,12 @@ public class BooleanBox : MonoBehaviour
                 {
                     if(value == 1)
                     {
-                        mySR.color = Color.white;
+                        mySR.color = Color.gray;
                         value = 0;
                     }
                     else
                     {
-                        mySR.color = Color.gray;
+                        mySR.color = Color.green;
                         value = 1;
                     }
 

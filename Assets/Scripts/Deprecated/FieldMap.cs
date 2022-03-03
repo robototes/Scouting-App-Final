@@ -9,14 +9,19 @@ public class FieldMap : MonoBehaviour
     public int startingID = 0;
     public int netCount;
     public GameObject detectionSquare;
+    public GameObject clickIndecator;
     public int lastId;
+    public float clickdelay = 0.2f;
     private SpriteRenderer mySR;
     private SpriteRenderer theirSR;
     private ImageDetector[] squares;
     private Display[] myDisplays;
+    private List<GameObject> markers = new List<GameObject>();
+    private BoxCollider2D myCol;
     // Start is called before the first frame update
     void Start()
     {
+        myCol = GetComponent<BoxCollider2D>();
         Display[] temp = FindObjectsOfType<Display>();
         int size = 0;
         for (int i = 0; i < temp.Length; i++)
@@ -74,24 +79,44 @@ public class FieldMap : MonoBehaviour
     }
     private void Update() 
     {
-        
-    }
-    void increase()
-    {
         for (int i = 0; i < myDisplays.Length; i++)
         {
-            myDisplays[i].count++;
-            if (myDisplays[i].count < netCount)
+            if (myDisplays[i].count < netCount && myDisplays[i].count >= 0)
             {
                 for (int j = 0; j < squares.Length; j++)
                 {
                     if (squares[j].id == lastId)
                     {
-                        squares[j].value -= netCount - myDisplays[i].count;
+                        squares[j].highGoal -= netCount - myDisplays[i].count;
                     }
                 }
+                Destroy(markers[markers.Count - 1]);
+                markers.RemoveAt(markers.Count - 1);
+                        
                 netCount = myDisplays[i].count;
             }
+        }
+    }
+    void increase()
+    {
+        for (int i = 0; i < rows*collumns; i++)
+        {
+            if (squares[i].clickPos != Vector3.zero)
+            {
+                GameObject tap = Instantiate(clickIndecator, squares[i].clickPos, transform.rotation);
+                tap.transform.SetParent(this.transform);
+                tap.transform.position = new Vector3(tap.transform.position.x, tap.transform.position.y, 0);
+                markers.Add(tap);
+
+                if (markers.Count > 1)
+                {
+                    markers[markers.Count - 2].GetComponent<SpriteRenderer>().color = Color.yellow;
+                }
+            }
+        }
+        for (int i = 0; i < myDisplays.Length; i++)
+        {
+            myDisplays[i].count++;
         }
         GameManager.updateDisplay.Invoke();
     }

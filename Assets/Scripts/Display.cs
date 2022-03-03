@@ -6,6 +6,7 @@ using TMPro;
 public class Display : MonoBehaviour
 {
     public int id = 0;
+    public string title;
     public int count = 0;
     TMP_Text text;
     // Start is called before the first frame update
@@ -18,7 +19,11 @@ public class Display : MonoBehaviour
 
     void updateText()
     {
-        text.text = "" + count;
+        if (count < 0)
+        {
+            count = 0;
+        }
+        text.text = title + count;
     }
 
 }

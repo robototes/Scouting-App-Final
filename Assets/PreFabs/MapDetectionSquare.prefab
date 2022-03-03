@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8164169922796097640}
   - component: {fileID: 4962130005860171568}
   - component: {fileID: 4497541098123238841}
+  - component: {fileID: 8170999600229156143}
   m_Layer: 0
-  m_Name: Square
+  m_Name: MapDetectionSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,10 +93,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4546748570552252523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -118,10 +119,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4546748570552252523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72e400957a6372f4c985a5011fa2129a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  value: 0
+  val2: 0
+  clickdelay: 0.2
   targetSize: {x: 0, y: 0, z: 0}
+  myCol: {fileID: 0}
+  clickPos: {x: 0, y: 0, z: 0}
+--- !u!114 &8170999600229156143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546748570552252523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be334b1ccecc994aae5bfaa09008311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  value: 0
+  val2: 0
+  clickdelay: 0.2
+  targetSize: {x: 0, y: 0, z: 0}
+  myCol: {fileID: 0}
+  clickPos: {x: 0, y: 0, z: 0}

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6149618226216245133}
   - component: {fileID: 6149618226216245132}
-  - component: {fileID: 6149618226216245131}
+  - component: {fileID: 887957534}
+  - component: {fileID: 887957535}
   m_Layer: 0
   m_Name: Field map
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6149618226216245130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 64, y: 64, z: 128}
+  m_LocalScale: {x: 96, y: 96, z: 128}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,7 +85,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6149618226216245131
+--- !u!61 &887957534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149618226216245130}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.52, y: 5.76}
+    newSize: {x: 11.52, y: 5.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.52, y: 5.76}
+  m_EdgeRadius: 0
+--- !u!114 &887957535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,12 +120,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6149618226216245130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cff66e27b63479c41841633150ab1baa, type: 3}
+  m_Script: {fileID: 11500000, guid: 446b79f37a0f7e740a8596fe4d8b8b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 6
-  collumns: 6
-  startingID: 0
+  rows: 3
+  collumns: 5
+  startingID: 2
   netCount: 0
   detectionSquare: {fileID: 4546748570552252523, guid: 67fcc76718e87cf42a92a1b017b37933, type: 3}
+  clickIndecator: {fileID: 3817168179280562576, guid: c4bfef6b7e971fc45a75bf951f0c1d5e, type: 3}
   lastId: 0
+  clickdelay: 0.2
+  value: 0
+  clicked: 0
+  clicktime: 0
+  myCol: {fileID: 0}

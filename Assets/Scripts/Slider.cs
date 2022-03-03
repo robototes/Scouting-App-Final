@@ -49,7 +49,7 @@ public class Slider : MonoBehaviour
         {   
             Touch finger = Input.GetTouch(0);
             Vector3 knobPosition = Camera.main.ScreenToWorldPoint(finger.position);
-            if (finger.phase == TouchPhase.Moved)
+            if (finger.phase == TouchPhase.Moved || finger.phase == TouchPhase.Began)
             {
                 if (myCol == Physics2D.OverlapPoint(knobPosition))
                 {
