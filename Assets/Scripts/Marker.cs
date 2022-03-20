@@ -19,7 +19,6 @@ public class Marker : MonoBehaviour
         {
             mySR.color = Color.red;
         }
-        
     }
     // Update is called once per frame
     void Update()

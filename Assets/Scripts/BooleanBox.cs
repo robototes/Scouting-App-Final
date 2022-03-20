@@ -9,11 +9,15 @@ public class BooleanBox : MonoBehaviour
     private BoxCollider2D myCol;
     private Display[] myDisplays;
     private SpriteRenderer mySR;
+    public Sprite pos;
+    public Sprite neg;
     // Start is called before the first frame update
     void Start()
     {
         myCol = GetComponent<BoxCollider2D>();
         mySR = GetComponent<SpriteRenderer>();
+
+        mySR.color = Color.red;
 
         Display[] temp = FindObjectsOfType<Display>();
         int size = 0;
@@ -50,12 +54,14 @@ public class BooleanBox : MonoBehaviour
                 {
                     if(value == 1)
                     {
-                        mySR.color = Color.gray;
+                        mySR.color = Color.red;
+                        mySR.sprite = neg;
                         value = 0;
                     }
                     else
                     {
                         mySR.color = Color.green;
+                        mySR.sprite = pos;
                         value = 1;
                     }
 
