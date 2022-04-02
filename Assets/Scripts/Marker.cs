@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
+    public Sprite missSprite;
     public int id;
     public int goal;
     public bool hit;
@@ -17,7 +18,22 @@ public class Marker : MonoBehaviour
         mySR = GetComponent<SpriteRenderer>();
         if(!hit)
         {
-            mySR.color = Color.red;
+            mySR.sprite = missSprite;
+            if(goal == 1)
+            {
+                mySR.color = new Color(0.74f, 0, 0);
+            }
+            else
+            {
+                mySR.color = Color.red;
+            }
+        }
+        else
+        {
+            if(goal == 1)
+            {
+                mySR.color = new Color(0, 0.69f, 0);
+            }
         }
     }
     // Update is called once per frame
