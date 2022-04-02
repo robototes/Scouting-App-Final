@@ -14,7 +14,7 @@ public class ExportButton : MonoBehaviour
     public StreamWriter writer;
     public string stage = "";
     private string output = "";
-    private string headOut = "";
+    //private string headOut = "";
     private string[] objects;
     private Display[] displays;
     private ImageDetector2[] map;
@@ -40,7 +40,6 @@ public class ExportButton : MonoBehaviour
         booleanBoxes = FindObjectsOfType<BooleanBox>();
 
         int matchTeamOffset;
-
         switch(writeTeamAndMatch)
         {
             case true:
@@ -125,6 +124,15 @@ public class ExportButton : MonoBehaviour
                         }
                     }
                 }
+                if(input[i].gameObject.name == "Tablet Number")
+                {
+                    //header[2] = "Team";
+                    objects[3] = input[i].text;
+                    if(string.IsNullOrEmpty(input[i].text))
+                    {
+                        objects[3] = GameManager.tabletNumber + "";
+                    }
+                }
             }
         }
 
@@ -150,7 +158,7 @@ public class ExportButton : MonoBehaviour
             if(!System.IO.File.Exists(Application.persistentDataPath + "/Tablet" + GameManager.tabletNumber + "Output.csv"))
             {
                 writer = new StreamWriter(Application.persistentDataPath + "/Tablet" + GameManager.tabletNumber + "Output.csv", true);
-                writer.WriteLine("Name,Match,Team,WhyGodWhy,-,GMMatch,GMTeam,autoLine,atotal,ah1,ah2,ah3,ah4,ah5,ah6,ah7,ah8,ah9,ah10,ah11,ah12,ah13,ah14,ah15,al1,al2,al3,al4,al5,al6,al7,al8,al9,al10,al11,al12,al13,al14,al15,amh1,amh2,amh3,amh4,amh5,amh6,amh7,amh8,amh9,amh10,amh11,amh12,amh13,amh14,amh15,aml1,aml2,aml3,aml4,aml5,aml6,aml7,aml8,aml9,aml10,aml11,aml12,aml13,aml14,aml15,-,def,climb,tTotal,th1,th2,th3,th4,th5,th6,th7,th8,th9,th10,th11,th12,th13,th14,th15,tl1,tl2,tl3,tl4,tl5,tl6,tl7,tl8,tl9,tl10,tl11,tl12,tl13,tl14,tl15,tmh1,tmh2,tmh3,tmh4,tmh5,tmh6,tmh7,tmh8,tmh9,tmh10,tmh11,tmh12,tmh13,tmh14,tmh15,tml1,tml2,tml3,tml4,tml5,tml6,tml7,tml8,tml9,tml10,tml11,tml12,tml13,tml14,tml15");
+                writer.WriteLine("Name,Match,Team,TabletNumber,-,GMMatch,GMTeam,autoLine,atotal,ah1,ah2,ah3,ah4,ah5,ah6,ah7,ah8,ah9,ah10,ah11,ah12,ah13,ah14,ah15,al1,al2,al3,al4,al5,al6,al7,al8,al9,al10,al11,al12,al13,al14,al15,amh1,amh2,amh3,amh4,amh5,amh6,amh7,amh8,amh9,amh10,amh11,amh12,amh13,amh14,amh15,aml1,aml2,aml3,aml4,aml5,aml6,aml7,aml8,aml9,aml10,aml11,aml12,aml13,aml14,aml15,-,def,climb,tTotal,th1,th2,th3,th4,th5,th6,th7,th8,th9,th10,th11,th12,th13,th14,th15,tl1,tl2,tl3,tl4,tl5,tl6,tl7,tl8,tl9,tl10,tl11,tl12,tl13,tl14,tl15,tmh1,tmh2,tmh3,tmh4,tmh5,tmh6,tmh7,tmh8,tmh9,tmh10,tmh11,tmh12,tmh13,tmh14,tmh15,tml1,tml2,tml3,tml4,tml5,tml6,tml7,tml8,tml9,tml10,tml11,tml12,tml13,tml14,tml15");
             }
             else
             {

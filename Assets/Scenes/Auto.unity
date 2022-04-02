@@ -1623,6 +1623,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 785512680}
     m_Modifications:
     - target: {fileID: 887957535, guid: 735dc5481ce740b4b80fa685af11ee14, type: 3}
+      propertyPath: rows
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 887957535, guid: 735dc5481ce740b4b80fa685af11ee14, type: 3}
+      propertyPath: collumns
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 887957535, guid: 735dc5481ce740b4b80fa685af11ee14, type: 3}
       propertyPath: startingID
       value: 2
       objectReference: {fileID: 0}
