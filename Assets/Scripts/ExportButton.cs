@@ -13,7 +13,7 @@ public class ExportButton : MonoBehaviour
     public bool writeTeamAndMatch;
     public StreamWriter writer;
     public string stage = "";
-    private string output = "";
+    public string output = "";
     //private string headOut = "";
     private string[] objects;
     private Display[] displays;
