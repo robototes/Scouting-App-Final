@@ -19,6 +19,7 @@ public class ExitButton : MonoBehaviour
     void UnBreak()
     {
         FindObjectOfType<ExportButton>().output = "";
+        GameManager._output = "";
         SceneManager.LoadScene(wuj);
     }
 }
